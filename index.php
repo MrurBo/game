@@ -20,13 +20,13 @@ $gameSettings = [
     <title>Worlde</title>
 </head>
 
-<body>
+<body style="background-color: #121213">
     <div class="container d-flex justify-content-center">
-        <div class="gameContainer">
-            <?php for ($i = 1; $i < $gameSettings['rows']; $i++):?>
-            <div class="row justify-content-center">
-                <?php for ($j = 1; $j < strlen($gameSettings['word']); $j++):?>
-                <div class="col"><span class="letter yellow">A</span></div>
+        <div class="gameContainer" id="gameContainer">
+            <?php for ($i = 0; $i < $gameSettings['rows']; $i++):?>
+            <div class="row justify-content-center" data-row="<?php echo $i?>">
+                <?php for ($j = 0; $j < strlen($gameSettings['word']); $j++):?>
+                <div class="col d-flex justify-content-center"><span class="letter" id="letter" data-column="<?php echo $j?>"><?php //echo $i . $j?></span></div>
                 <?php endfor;?>
             </div>
             <?php endfor;?>
@@ -34,6 +34,7 @@ $gameSettings = [
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
